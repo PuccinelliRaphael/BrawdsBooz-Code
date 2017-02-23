@@ -4,13 +4,12 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
 
 public class Pizza {
-	
-	
 	
 	public Pizza() {
 	}
@@ -22,17 +21,36 @@ public class Pizza {
 					new FileReader("/home/arnolf/erl-dev/pizza-prob/me_at_the_zoo.in"));
 			
 			String line = br.readLine();
-			
-			List<Integer> valList = new LinkedList<Integer>();
+			int[] values = new int[5];
+			int j = 0;
 			Scanner sc = new Scanner(line);
 			
 			while (sc.hasNextInt()) {
-				valList.add(sc.nextInt());
+				values[j] = sc.nextInt();
+				j++;
 			}
 			
-			System.out.println(valList);
+			System.out.println(values[0] + ", " + values[1]);
 			
-			for (int i = 0; i < valList.get(0); i++) {
+			int videos [] = new int[values[0]];
+			
+			line = br.readLine();
+			sc = new Scanner(line);
+			
+			for (int i = 0; i < values[0]; i++) {
+				videos[i] = sc.nextInt();
+			}
+			
+			System.out.println(Arrays.toString(videos));
+			
+			line = br.readLine();
+			sc = new Scanner(line);
+			
+			System.out.println(line);
+			
+			for (int i = 0; i < values[1]; i++) {
+				EndPoint e = new EndPoint();
+				
 				
 			}
 			
