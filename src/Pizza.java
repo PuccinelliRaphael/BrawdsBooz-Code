@@ -12,6 +12,7 @@ import java.util.Scanner;
 public class Pizza {
 	
 	public Pizza() {
+		
 	}
 	
 	private void reader() {
@@ -73,6 +74,7 @@ public class Pizza {
 				line = br.readLine();
 				sc = new Scanner(line);
 				
+				//Dont have to initiate these. Can just add the sc.next at proper place in struct
 				int video = sc.nextInt(), endPoint = sc.nextInt(), requests = sc.nextInt();
 				
 				Cache x = new Cache(values[4]);
