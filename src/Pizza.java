@@ -46,12 +46,19 @@ public class Pizza {
 			line = br.readLine();
 			sc = new Scanner(line);
 			
-			System.out.println(line);
+			int latency = sc.nextInt();
+			int endpts = sc.nextInt();
 			
-			for (int i = 0; i < values[1]; i++) {
+			System.out.println(latency + ", " + endpts);
+			
+			for (int i = 0; i < endpts; i++) {
 				EndPoint e = new EndPoint();
+				line = br.readLine();
+				sc = new Scanner(line);
 				
+				e.addCaches(sc.nextInt(), sc.nextInt());
 				
+				System.out.println(e.toString());
 			}
 			
 		} catch (FileNotFoundException e) {

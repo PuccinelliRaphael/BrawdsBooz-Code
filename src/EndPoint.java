@@ -1,3 +1,5 @@
+package pizza_test;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -11,5 +13,8 @@ public class EndPoint {
     public Map getCaches(){
         return this.caches;
     }
-
+    
+    public String toString() {
+    	return caches.toString();
+    }
 }
