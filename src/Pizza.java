@@ -30,7 +30,7 @@ public class Pizza {
 				j++;
 			}
 			
-			System.out.println(values[0] + ", " + values[1]);
+			System.out.println(values[0] + ", " + values[1] + ", " + values[2] + ", " + values[3] + ", " + values[4]);
 			
 			int videos [] = new int[values[0]];
 			
@@ -43,22 +43,42 @@ public class Pizza {
 			
 			System.out.println(Arrays.toString(videos));
 			
-			line = br.readLine();
-			sc = new Scanner(line);
-			
-			int latency = sc.nextInt();
-			int endpts = sc.nextInt();
-			
-			System.out.println(latency + ", " + endpts);
-			
-			for (int i = 0; i < endpts; i++) {
-				EndPoint e = new EndPoint();
+			for (int n = 0; n < values[1]; n++) {
+				
 				line = br.readLine();
 				sc = new Scanner(line);
 				
-				e.addCaches(sc.nextInt(), sc.nextInt());
+				int latency = sc.nextInt();
+				int endpts = sc.nextInt();
 				
+				EndPoint e = new EndPoint(latency);
+				
+				for (int i = 0; i < endpts; i++) {
+					line = br.readLine();
+					sc = new Scanner(line);
+					
+					e.addCaches(sc.nextInt(), sc.nextInt());
+				}
 				System.out.println(e.toString());
+			}
+			
+			for (int n = 0; n < values[2]; n++) {
+				//??
+			}
+			
+			System.out.println("\n" + line + "\n----\n");
+			Cache[] caches = new Cache[values[3]];
+			
+			for (int n = 0; n < values[3]; n++) {
+				line = br.readLine();
+				sc = new Scanner(line);
+				
+				int video = sc.nextInt(), endPoint = sc.nextInt(), requests = sc.nextInt();
+				
+				Cache x = new Cache(values[4]);
+				caches[n] = x;
+				
+				System.out.println(line);
 			}
 			
 		} catch (FileNotFoundException e) {
@@ -66,7 +86,6 @@ public class Pizza {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		
 	}
 	
 	private void mapper(LinkedList<String> list) {
